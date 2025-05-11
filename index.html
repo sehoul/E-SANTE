@@ -6,8 +6,13 @@
   <title>E-Sante - Téléconsultation</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
   <!-- Header -->
   <header class="">
     <nav>
@@ -133,7 +138,7 @@
       <div class="card">
         <div class="card-content">
             <h3>Offrir <span style="color: var(--primary-color);">Bien-être</span> et Santé pour Tout le Monde</h3>
-            <p>N’hésitez pas à poser toutes vos questions sur votre état de santé, les traitements disponibles et vos inquiétudes.</p>
+            <p>N'hésitez pas à poser toutes vos questions sur votre état de santé, les traitements disponibles et vos inquiétudes.</p>
         </div>
         <div class="card-image">
             <i class="bi bi-person-heart"  style="color: var(--primary-color);font-size: xx-large;"></i>
@@ -159,13 +164,13 @@
               <i class="bi bi-journal-medical"></i>
             </div>
             <div>
-              <div class="doctor-note-title">Doctor's Note</div>
-              <div class="doctor-note-date">Added Thursday At 1:00 PM</div>
+              <div class="doctor-note-title">Notes du Médecin</div>
+              <div class="doctor-note-date">Ajouté le Jeudi à 13:00</div>
             </div>
           </div>
           <div class="doctor-note-skeleton"></div>
           <div class="doctor-note-skeleton short"></div>
-          <button class="doctor-note-btn">View Doctor's Note</button>
+          <button class="doctor-note-btn">Voir les Notes du Médecin</button>
         </div>
       </div>
 
@@ -214,9 +219,169 @@
           <h3>Bénéficiez d'un Soutien Continu <span style="color: var(--primary-color);">24h/24</span></h3>
           <p>Nous vérifions pour vous la couverture de votre mutuelle et les formalités nécessaires avant toute consultation.</p>
         </div>
+        <div class="card">
+            <div class="ico">
+            <i class="bi bi-person-check"></i>
+            </div>
+          <h3>Des Prestations <span style="color: var(--primary-color);">Médicales </span>d'Excellence</h3>
+          <p>Trouvez un dermatologue qualifié et adapté à vos besoins. Prenez en compte des critères comme la localisation géographique.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Tous les Services que Nous Offrons -->
+  <section class="services">
+    <div class="left-content">
+      <h2>Tous <span style="color: var(--primary-color);">Les Services</span> que Nous Vous Offrons</h2>
+      <p>Avec un engagement envers des interfaces utilisateur améliorées, des informations transparentes et des ressources accessibles, nous simplifions votre parcours vers la santé. Parce que lorsque cela concerne votre santé, nous croyons que la simplicité est essentielle.</p>
+      <button class="cta">Prendre RDV</button>
+    </div>
+    <div class="right-content">
+      <div class="card">
+        <div class="ico">
+          <i class="bi bi-person-arms-up"></i>
+        </div>
+        <h3>Une Peau en Meilleure Santé</h3>
+        <p>La dermatologie est la spécialité médicale dédiée au soin de l'organe le plus étendu du corps : la peau. Elle couvre un large éventail d'affections, variables pour chaque patient..</p>
+      </div>
+      <div class="card">
+        <div class="ico" style="background: #d9043d2b;">
+            <i class="bi bi-heart-pulse-fill" style="display: flex;color: #D9043D;"></i>
+        </div>
+        <h3>Un Cœur en Pleine Forme</h3>
+        <p>Les services de cardiologie prennent en charge les pathologies cardiaques. Les services pédiatriques sont dédiés à la santé des enfants.</p>
+      </div>
+      <div class="card">
+        <div class="ico" style="background: #d387323b;">
+            <i class="ri-parent-fill" style="color: #d38732;"></i>
+        </div>
+        <h3>Prise en Charge des Enfants</h3>
+        <p>Les services sociaux proposent un accompagnement et des ressources pour les patients et leurs familles, avec des solutions personnalisées.</p>
+      </div>
+      <div class="card">
+        <div class="ico" style="background: #44b4663b;">
+            <i class="ri-brain-fill" style="color: #44b466;"></i>
+        </div>
+        <h3>Santé Mentale Équilibrée</h3>
+        <p>Votre médecin traitant peut vous orienter vers un dermatologue si nécessaire, mais aussi vers un psychiatre ou un psychologue pour un suivi mental.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rencontrez Nos Experts -->
+  <section class="experts">
+    <div></div>
+    <div class="Title">
+        <h2>Rencontrez <span style="color: var(--primary-color);">Tous les Experts</span> qui Travaillent avec Nous</h2>
+        <p>Inscrivez-vous en moins de 60 secondes pour expérimenter pourquoi plus d'un million de prestataires font confiance à E-SANTE.</p>
+    </div>
+    <div></div>
+
+    <div  class="description-profile">
+        <div></div>
+        <div class="description-profile-content description-profile-bottom"> 
+            <span>Dermatologie</span>
+            <h3>Dr. Lesla Alexander</h3>
+            <p>Le domaine médical dédié au soin de la plus grande organe du corps, la peau. Il englobe une large gamme de conditions, différentes pour chaque personne.</p>
+        </div>
+    </div>
+    <div class="profiles-image">
+        <img src="image/doc2.png" alt="Dr">
+        <img src="image/doc1.png" alt="Dr" style="  width: 50%; ">
+    </div>
+    <div class="description-profile">
+        <div class="description-profile-content description-profile-top"> 
+            <span>Pédiatrie</span>
+            <h3>Dr. Albert Flores</h3>
+            <p>Dédié au soin des enfants. Ce département se concentre sur la santé féminine, y compris la grossesse et la santé reproductive.</p>
+        </div>
+        <div></div>
+    </div>
+  </section>
+
+  <!-- Engagement envers la Medicare de Qualité -->
+  <section class="commitment">
+    <div class="bubbles">
+      <div class="bubble" style="top:10%; left:8%; background:#1485fd;"></div>
+      <div class="bubble" style="top:20%; left:80%; background:#3A9EFF;"></div>
+      <div class="bubble" style="top:60%; left:15%; background:#5FB4FF;"></div>
+      <div class="bubble" style="top:75%; left:70%; background:#44b466;"></div>
+      <div class="bubble" style="top:35%; left: 30%; background:#d38732;"></div>
+      <div class="bubble" style="top:85%; left:30%; background:#ffb199;"></div>
+      <div class="bubble" style="top:55%; left:90%; background:#ff7a59;"></div>
+      <div class="bubble" style="top:5%;  left:60%; background:#2563eb;"></div>
+    </div>
+    <h2>Notre Engagement envers la <span style="color: var(--primary-color);">Médecine de Qualité</span></h2>
+    <div class="stats">
+      <h1>1.234.567.890</h1>
+      <div class="processbar">
+        <div class="processbar-content"></div>
+      </div>
+      <p>Minutes de Télémédecine ont été livrées par des prestataires via E-SANTE déjà.</p>
+    </div>
+    <div class="achievements">
+      <div class="achievement">
+        <h2>35+</h2>
+        <p>Années d'Expérience</p>
+      </div>
+      <div class="achievement">
+        <h2>1.275+</h2>
+        <p>Utilisateurs Satisfaits</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-columns">
+      <div class="column">
+        <div class="logo">
+          <img src="image/logoEsante.png" alt="Logo E-SANTE">
+          <span>E-Sante</span>
+        </div>
+        <p>Votre Opinion Compte, et les Oiseaux Arrivent Tôt pour Recevoir des Retours et Influencer.</p>
+        <button class="cta">Prendre RDV</button>
+      </div>
+      <div class="column">
+        <h3>Info</h3>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Conditions d'Utilisation</a></li>
+          <li><a href="#">Politique de Confidentialité</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Apprendre</h3>
+        <ul>
+          <li><a href="#">À Propos</a></li>
+          <li><a href="#">Devenir Membre</a></li>
+          <li><a href="#">Calculateur de Santé</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Communauté</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Restez Connectés</h3>
+        <ul>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <span><i class="bi bi-envelope" style="color: var(--primary-color);"></i> info@E-SANTE.com</span>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>contenu Copyright 2023 © E-SANTE . Tous droits réservés.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
