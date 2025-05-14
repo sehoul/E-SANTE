@@ -1,43 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Animation du formulaire
-    const form = document.getElementById('appointment-form');
-    const inputs = form.querySelectorAll('input, select');
 
-    inputs.forEach(input => {
-        input.addEventListener('focus', () => {
-            input.parentElement.classList.add('focused');
-        });
-
-        input.addEventListener('blur', () => {
-            if (!input.value) {
-                input.parentElement.classList.remove('focused');
-            }
-        });
-    });
-
-    // Gestion du formulaire
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Animation de soumission
-        const submitButton = form.querySelector('.submit-button');
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-        
-        // Simulation d'envoi (à remplacer par votre logique d'API)
-        setTimeout(() => {
-            submitButton.innerHTML = '<i class="fas fa-check"></i> Rendez-vous confirmé !';
-            submitButton.style.backgroundColor = '#4CAF50';
-            
-            // Réinitialisation du formulaire
-            form.reset();
-            
-            // Retour à l'état initial après 3 secondes
-            setTimeout(() => {
-                submitButton.innerHTML = 'Confirmer le RDV';
-                submitButton.style.backgroundColor = '';
-            }, 3000);
-        }, 2000);
-    });
 
     // Animation du bouton CTA
     const ctaButton = document.querySelector('.cta-button');
@@ -100,15 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Header scroll effect
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 0) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
 });
 
 window.addEventListener('load', function() {
@@ -118,3 +71,82 @@ window.addEventListener('load', function() {
     setTimeout(() => preloader.style.display = 'none', 400);
   }
 }); 
+
+ // Header scroll effect
+ const header = document.querySelector('header');
+ window.addEventListener('scroll', () => {
+     if (window.scrollY > 0) {
+         header.classList.add('scrolled');
+         document.querySelector('.logo-img').src = 'image/logoEsante.png';
+         document.querySelector('.logo-text').style.background = 'var(--primary-color)';
+         document.querySelector('.logo-text').style.webkitBackgroundClip = 'text';
+         document.querySelector('.logo-text').style.webkitTextFillColor = 'transparent';
+         // Change color of all navbar links
+         document.querySelectorAll('nav a').forEach(link => {
+             link.style.color = 'var(--text-color)';
+         });
+         
+        } else {
+            header.classList.remove('scrolled');
+            document.querySelector('.logo-img').src = 'image/logoEsante_B.png';
+            document.querySelector('.logo-text').style.background = 'var(--white)';
+            document.querySelector('.logo-text').style.webkitBackgroundClip = 'text';
+            document.querySelector('.logo-text').style.webkitTextFillColor = 'transparent';
+            // Reset color of all navbar links
+            document.querySelectorAll('nav a').forEach(link => {
+                link.style.color = 'var(--white)';
+            });
+     }
+ });
+
+ document.addEventListener('DOMContentLoaded', function() {
+    const vid1 = document.getElementById('vid1');
+    const vid2 = document.getElementById('vid2');
+    
+    // Démarrer la première vidéo
+    vid1.play();
+    
+    // Précharger la deuxième vidéo
+    vid2.load();
+    
+    let isTransitioning = false;
+    
+    function handleVideoEnd(video) {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      
+      const current = video.id === 'vid1' ? vid1 : vid2;
+      const next = video.id === 'vid1' ? vid2 : vid1;
+      
+      // Préparer la transition
+      next.currentTime = 0;
+      next.play();
+      
+      // Effectuer la transition
+      current.classList.remove('active');
+      next.classList.add('active');
+      
+      // Réinitialiser après la transition
+      setTimeout(() => {
+        current.pause();
+        isTransitioning = false;
+      }, 1500);
+    }
+    
+    vid1.addEventListener('ended', () => handleVideoEnd(vid1));
+    vid2.addEventListener('ended', () => handleVideoEnd(vid2));
+    
+    // Système de fallback au cas où l'événement ended ne se déclenche pas
+    function checkVideoProgress() {
+      if (!isTransitioning) {
+        if (vid1.classList.contains('active') && vid1.currentTime >= vid1.duration - 0.5) {
+          handleVideoEnd(vid1);
+        } else if (vid2.classList.contains('active') && vid2.currentTime >= vid2.duration - 0.5) {
+          handleVideoEnd(vid2);
+        }
+      }
+      requestAnimationFrame(checkVideoProgress);
+    }
+    
+    checkVideoProgress();
+  });

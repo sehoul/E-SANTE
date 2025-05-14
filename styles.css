@@ -4,7 +4,7 @@
     --primary-color: #1485fd;
     --secondary-color: #3A9EFF;
     --accent-color: #5FB4FF;
-    --background-color: #f8fafc;
+    --background-color: #ffffff;
     --text-color: #1e293b;
     --white: #ffffff;
     --gradient-primary: linear-gradient(135deg, #1485fd, #3A9EFF);
@@ -28,6 +28,16 @@ body {
 
 /* Header & Navigation */
 header {
+    color: white;
+    padding: 1.2rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header.scrolled {
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -36,14 +46,8 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4scubic-bezier(0.4, 0, 0.2, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-header.scrolled {
-    padding: 1rem 5%;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -71,7 +75,7 @@ nav {
 .logo span {
     font-size: 1.5rem;
     font-weight: 700;
-    background: var(--gradient-primary);
+    background: var(--white);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.3s ease;
@@ -85,7 +89,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--white);
     font-weight: 500;
     font-size: 1.05rem;
     transition: all 0.3s ease;
@@ -106,7 +110,7 @@ nav ul li a::after {
 }
 
 nav ul li a:hover {
-    color: var(--primary-color);
+    color: var(--primary-color)!important;
 }
 
 nav ul li a:hover::after {
@@ -339,7 +343,7 @@ section.virtual-visits {}
 
 /* Services Section */
 .services {
-    padding: 8rem 3%;
+    padding: 4rem 3%;
     background: var(--white);
     display: flex;
     justify-content: center;
@@ -774,7 +778,9 @@ footer {
 .wave-separator svg {
   display: block;
   width: 100%;
-  height: 70px;
+  height: 60px;
+  transform: rotate(0deg);
+  margin-top: -2.75rem;
 }
 .easy-section-left-content-2 {
     width: 35%;
@@ -1155,4 +1161,42 @@ h1, h2, h3 {
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+.first-section{
+    width: 100%;
+    height: 100vh;
+    background: var(--background-color);
+    display: grid;
+    align-content: center;
+    position: relative;
+}
+
+.first-section-content{
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    align-content: center;
+    background: linear-gradient(360deg, #0062ff94 0%, #61e8ff6b 100%);
+    color: white;
+}
+
+.first-section-content h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.first-section-content p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    width: 50%;
+    margin-inline: auto;
 }
