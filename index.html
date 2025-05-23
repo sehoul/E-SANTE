@@ -23,16 +23,15 @@
         <span class="logo-text">E-Sante</span>
       </div>
       <ul>
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">Comment ça marche</a></li>
-        <li><a href="#">Nos Services</a></li>
-        <li><a href="#">Qualité des Soins</a></li>
-        <li><a href="#">Témoignages</a></li>
+        <li><a href="#Accueil">Accueil</a></li>
+        <li><a href="#Apropos">A propos</a></li>
+        <li><a href="#Services">Services</a></li>
+        <li><a href="#Contact">Contact</a></li>
       </ul>
       <button class="cta">Prendre RDV</button>
     </nav>
   </header>
-<section class="first-section">
+<section id="Accueil" class="first-section">
   <div class="video-background">
     <video id="vid1" class="background-video active" muted autoplay>
       <source src="image/Vid1.mp4" type="video/mp4">
@@ -55,7 +54,7 @@
     </svg>
   </div>
   <!-- Section Héro -->
-  <section class="hero">
+  <section id="Apropos" class="hero">
     <div class="left-content">
         <div class="left-content-1">
             <img src="image/Mol.png" alt="Molécule" style="filter :grayscale(1)">
@@ -266,7 +265,7 @@
     </svg>
   </div>
   <!-- Tous les Services que Nous Offrons -->
-  <section class="services">
+  <section id="Services" class="services">
     <div class="left-content">
       <h2>Tous <span style="color: var(--primary-color);">Les Services</span> que Nous Vous Offrons</h2>
       <p>Avec un engagement envers des interfaces utilisateur améliorées, des informations transparentes et des ressources accessibles, nous simplifions votre parcours vers la santé. Parce que lorsque cela concerne votre santé, nous croyons que la simplicité est essentielle.</p>
@@ -310,7 +309,7 @@
     </svg>
   </div>
   <!-- Rencontrez Nos Experts -->
-  <section class="experts">
+  <section id="Experts" class="experts" >
     <div></div>
     <div class="Title">
         <h2>Rencontrez <span style="color: var(--primary-color);">Tous les Experts</span> qui Travaillent avec Nous</h2>
@@ -373,7 +372,7 @@
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer id="Contact">
     <div class="footer-columns">
       <div class="column">
         <div class="logo">
@@ -423,6 +422,88 @@
     </div>
   </footer>
 
+  <!-- Appointment Booking Popup -->
+  <div class="popup-overlay">
+    <div class="popup-content">
+      <div class="popup-header">
+        <h2>Réserver un Rendez-vous</h2>
+        <button class="close-popup"><i class="bi bi-x-diamond-fill" style="color: var(--primary-color);"></i></button>
+      </div>
+      <div class="popup-body">
+        <div class="calendar-section">
+          <!-- Calendar header -->
+          <div class="calendar-header">
+            <button class="prev-month"><i class="bi bi-arrow-left"></i></button>
+            <h3 class="current-month">Septembre 2024</h3>
+            <button class="next-month"><i class="bi bi-arrow-right"></i></button>
+          </div>
+          <!-- Calendar grid -->
+          <div class="calendar-grid">
+            <div class="day-label">Lun</div>
+            <div class="day-label">Mar</div>
+            <div class="day-label">Mer</div>
+            <div class="day-label">Jeu</div>
+            <div class="day-label">Ven</div>
+            <div class="day-label">Sam</div>
+            <div class="day-label">Dim</div>
+            <!-- Days will be added here by JavaScript -->
+          </div>
+          <div style=" display: flex; justify-content: flex-end;">
+            <button class="today-button">Aujourd'hui</button>
+          </div>
+        </div>
+        <div class="time-section">
+          <!-- Selected date and time range -->
+          <div class="selected-datetime">
+            Sélectionnez une date et une heure
+          </div>
+          <!-- Time slots -->
+          <div class="time-slots">
+            <!-- Time slots will be added here by JavaScript -->
+          </div>
+        </div>
+        <div class="contact-form-section">
+          <h3>Vos Coordonnées</h3>
+          <form action="#">
+            <div class="form-group">
+              <label for="specialty">Spécialité <span class="required">*</span></label>
+              <select id="specialty" required>
+                <option value="">-- Sélectionner une spécialité --</option>
+                <!-- Options will be added by JavaScript -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="doctor">Docteur <span class="required">*</span></label>
+              <select id="doctor" required disabled>
+                 <option value="">-- Sélectionner un docteur --</option>
+                <!-- Options will be added by JavaScript -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="name">Votre nom <span class="required">*</span></label>
+              <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Téléphone <span class="required">*</span></label>
+              <!-- This would ideally be a custom component for country code -->
+              <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Votre email</label>
+              <input type="email" id="email">
+            </div>
+            <div class="form-group">
+              <label for="comment">Commentaire</label>
+              <textarea id="comment"></textarea>
+            </div>
+            <button type="submit" class="cta">Prendre un rendez-vous</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
   <script src="script.js"></script>
 </body>
 </html>
